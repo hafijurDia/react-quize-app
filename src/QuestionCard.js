@@ -16,7 +16,7 @@ export default function QuestionCard({
         <p>Question: {currentQuestionIndex + 1} / {quizzes.length}</p>
         <h3>{quize.question}</h3>
         {currentAnswers.map((answer, i) => (<AnswerCard key={i} answer={answer} pickAnswer={pickAnswer} correctAnswer={correctAnswer} pickedAnswer={pickedAnswer}/>)) }
-        <button onClick={navigateNext}>Next</button>
+        <button className='nextButton' onClick={navigateNext}>Next</button>
     </div>
   )
 }

@@ -2,12 +2,14 @@ import React from 'react'
 
 export default function ScoreCard({totalScore,resetQuiz}) {
   return (
-    <div className='result'>
-      <h3>Result page</h3>
-      <p>Score {totalScore}</p>
-      <button onClick={resetQuiz} className='btn restart-btn'>
-        Reset Quiz
-      </button>
+    <div className="container">
+        <div className='question-card score'>
+        <h3>Result</h3>
+        <p className='score'>Your Score: {totalScore}</p>
+        <button onClick={resetQuiz} className='btn restart-btn'>
+            Reset Quiz
+        </button>
+        </div>
     </div>
   )
 }

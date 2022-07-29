@@ -71,7 +71,7 @@ function App() {
     <>
       {endGame && <ScoreCard totalScore={totalScore} resetQuiz={resetQuiz} />}
       <div class="center">
-      {!startQuize && <button onClick={fetchQuize}>Start Quize</button>}
+      {!startQuize && <button className='startButton' onClick={fetchQuize}>Start Quize</button>}
       </div>
       <div className="container">
         {loaded && !endGame && 
