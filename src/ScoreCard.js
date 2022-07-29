@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ScoreCard(totalScore,resetQuiz) {
+export default function ScoreCard({totalScore,resetQuiz}) {
   return (
     <div className='result'>
       <h3>Result page</h3>

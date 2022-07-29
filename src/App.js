@@ -15,8 +15,6 @@ function App() {
   const [pickedAnswer, setPickedAnswer] = useState(null)
 
 
- 
-
   //select correct answer function
   const pickAnswer = (answer) => {
     setPickedAnswer(answer)
@@ -44,7 +42,14 @@ function App() {
 
    //reset quize
    const resetQuiz = () => {
-    console.log('reset done')
+    setQuizzes(null)
+    setLoaded(false)
+    setCorrectAnswer(null)
+    setEndGame(false)
+    setStartQuize(false)
+    setPickedAnswer(null)
+    setTotalScore(0)
+    setCurrentQuestionIndex(0)
   }
   
   //satrt quize button fuction
@@ -65,7 +70,9 @@ function App() {
   return (
     <>
       {endGame && <ScoreCard totalScore={totalScore} resetQuiz={resetQuiz} />}
+      <div class="center">
       {!startQuize && <button onClick={fetchQuize}>Start Quize</button>}
+      </div>
       <div className="container">
         {loaded && !endGame && 
         <QuestionCard 

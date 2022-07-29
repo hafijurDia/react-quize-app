@@ -37,7 +37,11 @@ html {
     display: flex;
     min-height: 60vh;
   }
-  
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .start-quiz {
     margin: auto;
   }
