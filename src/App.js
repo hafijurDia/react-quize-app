@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import QuestionCard from './QuestionCard'
 import ScoreCard from './ScoreCard'
 import shuffle from './utils'
@@ -13,8 +13,20 @@ function App() {
   const [totalScore, setTotalScore] = useState(0)
   const [correctAnswer, setCorrectAnswer] = useState(null)
   const [pickedAnswer, setPickedAnswer] = useState(null)
+  const [reset, setReset] = useState(false)
 
+  //use useEffect component
+  useEffect(() => {
+    fetchQuize()
+    /* eslint-disable-next-line*/ 
+  }, [])
 
+  useEffect(() => {
+    if (reset) {
+      fetchQuize()
+    /* eslint-disable-next-line*/ 
+    }
+  },[reset])
   //select correct answer function
   const pickAnswer = (answer) => {
     setPickedAnswer(answer)
@@ -42,6 +54,7 @@ function App() {
 
    //reset quize
    const resetQuiz = () => {
+    setReset(true)
     setQuizzes(null)
     setLoaded(false)
     setCorrectAnswer(null)
@@ -67,11 +80,12 @@ function App() {
     console.log(results)
   }
 
+
   return (
     <>
       {endGame && <ScoreCard totalScore={totalScore} resetQuiz={resetQuiz} />}
       <div class="center">
-      {!startQuize && <button className='startButton' onClick={fetchQuize}>Start Quize</button>}
+      {/* {!startQuize && <button className='startButton' onClick={fetchQuize}>Start Quize</button>} */}
       </div>
       <div className="container">
         {loaded && !endGame && 
