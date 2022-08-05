@@ -1,8 +1,10 @@
+import ControlledForm from "./ControlledForm";
+
 function App() {
   return (
     <>
       <div className="container">
-        <h1>Hello world </h1>
+        <ControlledForm />
       </div>
     </>
   );
